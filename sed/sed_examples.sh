@@ -14,3 +14,7 @@ echo "----------------------"
 echo "1. Replace 'Hello' with 'Hi':"
 sed 's/Hello/Hi/' sample.txt
 echo "----------------------"
+
+echo "2. Replace all 'is' with 'was':"
+sed 's/is/was/g' sample.txt
+echo "----------------------"
