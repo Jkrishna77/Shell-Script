@@ -34,3 +34,27 @@ echo "----------------------"
 echo "5. Count the total number of lines:"
 awk 'END {print NR}' app.log
 echo "----------------------"
+
+##########################################
+# Section 2: Filtering & Conditions (Examples 6–10)
+##########################################
+
+echo "6. Print lines where log level is TRACE:"
+awk '$3 == "TRACE" {print}' app.log
+echo "----------------------"
+
+echo "7. Print lines with timestamp after 08:52:00:"
+awk '$2 > "08:52:00" {print}' app.log
+echo "----------------------"
+
+echo "8. Print lines that don’t contain TRACE:"
+awk '!/TRACE/ {print}' app.log
+echo "----------------------"
+
+echo "9. Count number of INFO log lines:"
+awk '/INFO/ {count++} END {print count}' app.log
+echo "----------------------"
+
+echo "10. Print only unique log levels:"
+awk '{print $3}' app.log | sort | uniq
+echo "----------------------"
