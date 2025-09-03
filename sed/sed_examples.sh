@@ -11,6 +11,16 @@ echo "Original file content:"
 cat sample.txt
 echo "----------------------"
 
+Common sed options we will cover:
+
+  -n → suppress automatic printing (we only print when explicitly told with p).
+
+  -i → in-place editing (modifies the file directly).
+
+  -e → allows multiple editing commands in one invocation.
+
+  -f → read sed commands from a script file.
+
 ############################
 # SECTION 1: Basics
 ############################
@@ -81,4 +91,28 @@ echo "----------------------"
 
 echo "15. Delete lines matching 'DevOps':"
 sed '/DevOps/d' sample.txt
+echo "----------------------"
+
+############################
+# SECTION 4: Printing
+############################
+
+echo "16. Print only line 1:"
+sed -n '1p' sample.txt
+echo "----------------------"
+
+echo "17. Print only line 2:"
+sed -n '2p' sample.txt
+echo "----------------------"
+
+echo "18. Print last line:"
+sed -n '$p' sample.txt
+echo "----------------------"
+
+echo "19. Print lines 2 to 3:"
+sed -n '2,3p' sample.txt
+echo "----------------------"
+
+echo "20. Print lines matching 'test':"
+sed -n '/test/p' sample.txt
 echo "----------------------"
