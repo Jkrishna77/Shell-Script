@@ -18,3 +18,10 @@ Run all examples with:
 * Extract specific columns  
 * Filter lines by text match  
 * Count lines  
+
+### **Section 2: Filtering & Conditions (Examples 6–10)**
+* Match by field values (e.g., log level)  
+* Compare timestamps  
+* Exclude lines with a pattern  
+* Count pattern occurrences  
+* Show unique values  
