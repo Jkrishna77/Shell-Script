@@ -95,6 +95,9 @@ echo "----------------------"
 
 ############################
 # SECTION 4: Printing
+# By default, sed prints every line after applying edits.
+# The option `-n` suppresses this automatic printing, so we can
+# explicitly choose which lines to print using the `p` command.
 ############################
 
 echo "16. Print only line 1:"
@@ -116,3 +119,32 @@ echo "----------------------"
 echo "20. Print lines matching 'test':"
 sed -n '/test/p' sample.txt
 echo "----------------------"
+
+############################
+# SECTION 5: Insert / Append / Change
+# sed supports inserting (i), appending (a), and changing (c) lines.
+# - i → insert BEFORE a matching line
+# - a → append AFTER a matching line
+# - c → change (replace) the matching line entirely
+############################
+
+echo "21. Insert a line before line 2:"
+sed '2i This line was inserted before line 2' sample.txt
+echo "----------------------"
+
+echo "22. Append a line after line 2:"
+sed '2a This line was appended after line 2' sample.txt
+echo "----------------------"
+
+echo "23. Change line 2 completely:"
+sed '2c This is the new line 2' sample.txt
+echo "----------------------"
+
+echo "24. Insert a header at the start of file:"
+sed '1i ===== HEADER START =====' sample.txt
+echo "----------------------"
+
+echo "25. Append a footer at the end of file:"
+sed '$a ===== FOOTER END =====' sample.txt
+echo "----------------------"
+
