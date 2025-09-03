@@ -148,3 +148,36 @@ echo "25. Append a footer at the end of file:"
 sed '$a ===== FOOTER END =====' sample.txt
 echo "----------------------"
 
+
+############################
+# SECTION 6: In-place Editing & Multiple Commands
+# - By default, sed only prints changes to stdout (screen) — it does not modify the original file.
+#   If you want to modify the file directly, you use the -i option (stands for in-place).
+# - The `-e` option lets us run multiple sed commands in a single run.
+############################
+
+# Make a copy so we don't destroy the original during practice
+cp sample.txt sample_copy.txt
+
+echo "26. In-place replace 'Hello' with 'Hi' :"
+sed -i 's/Hello/Hi/' sample_copy.txt
+cat sample_copy.txt
+echo "----------------------"
+
+echo "27. In-place delete line 2 :"
+sed -i '2d' sample_copy.txt
+cat sample_copy.txt
+echo "----------------------"
+
+echo "28. Use -e to run multiple commands (replace & delete):"
+sed -e 's/DevOps/Cloud/' -e '/World/d' sample.txt
+echo "----------------------"
+
+echo "29. Use -e to chain insertion + replacement:"
+sed -e '1i START_OF_FILE' -e 's/powerful/awesome/' sample.txt
+echo "----------------------"
+
+echo "30. Explore -i.bak option and try out sample command here"
+echo "Happy learning"
+echo "----------------------"
+
