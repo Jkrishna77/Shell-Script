@@ -25,3 +25,39 @@ Run all examples with:
 * Exclude lines with a pattern  
 * Count pattern occurrences  
 * Show unique values  
+
+### **Section 3: Formatting & Output (Examples 11–15)**
+* Add line numbers  
+* Format as CSV  
+* Print only message body  
+* Highlight important entries  
+* Limit output lines  
+
+---
+
+## How to Use
+
+1. Ensure the log file exists:
+
+   ```bash
+   ls -l app.log
+   ```
+
+2. Run the script:
+
+   ```bash
+   ./awk_examples.sh
+   ```
+
+3. Observe outputs for each section.
+
+---
+
+## Next Steps
+
+Future expansions (not yet added):
+
+* Using `-F` for custom delimiters (CSV/TSV)  
+* More advanced text transformations  
+* Real-world log parsing (Apache, Nginx, Kubernetes logs)  
+* Combining `awk` with `sed` and `grep`  
