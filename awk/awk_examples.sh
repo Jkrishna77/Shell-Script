@@ -58,3 +58,28 @@ echo "----------------------"
 echo "10. Print only unique log levels:"
 awk '{print $3}' app.log | sort | uniq
 echo "----------------------"
+
+
+##########################################
+# Section 3: Formatting & Output (Examples 11–15)
+##########################################
+
+echo "11. Print line numbers with each log:"
+awk '{print NR, $0}' app.log
+echo "----------------------"
+
+echo "12. Format output as CSV (date,time,level):"
+awk '{print $1","$2","$3}' app.log | head -n 10
+echo "----------------------"
+
+echo "13. Print message field only (ignoring first 3 columns):"
+awk '{$1=""; $2=""; $3=""; sub(/^   /,""); print}' app.log | head -n 10
+echo "----------------------"
+
+echo "14. Highlight TRACE messages (add prefix 'ALERT:'):"
+awk '$3=="TRACE" {print "ALERT:", $0}' app.log
+echo "----------------------"
+
+echo "15. Print first 5 lines only:"
+awk 'NR<=5 {print}' app.log
+echo "----------------------"
