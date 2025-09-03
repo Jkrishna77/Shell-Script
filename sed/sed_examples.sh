@@ -58,3 +58,27 @@ echo "----------------------"
 echo "10. Replace 'is' with 'was' on every odd-numbered line:"
 sed '1~2 s/is/was/g' sample.txt
 echo "----------------------"
+
+############################
+# SECTION 3: Deleting lines
+############################
+
+echo "11. Delete line 1:"
+sed '1d' sample.txt
+echo "----------------------"
+
+echo "12. Delete line 2:"
+sed '2d' sample.txt
+echo "----------------------"
+
+echo "13. Delete last line:"
+sed '$d' sample.txt
+echo "----------------------"
+
+echo "14. Delete lines 2 to 3:"
+sed '2,3d' sample.txt
+echo "----------------------"
+
+echo "15. Delete lines matching 'DevOps':"
+sed '/DevOps/d' sample.txt
+echo "----------------------"
