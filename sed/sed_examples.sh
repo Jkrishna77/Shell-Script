@@ -34,3 +34,27 @@ echo "----------------------"
 echo "5. Replace all matches in each line ('is' -> 'was'):"
 sed 's/is/was/g' sample.txt
 echo "----------------------"
+
+############################
+# SECTION 2: More Replacements
+############################
+
+echo "6. Replace only the 2nd occurrence of 'is' with 'WAS':"
+sed 's/is/WAS/2' sample.txt
+echo "----------------------"
+
+echo "7. Replace only the 3rd occurrence of 'is' with 'WAS':"
+sed 's/is/WAS/3' sample.txt
+echo "----------------------"
+
+echo "8. Replace 'is' with 'was' only on line 2:"
+sed '2 s/is/was/g' sample.txt
+echo "----------------------"
+
+echo "9. Replace 'is' with 'was' between lines 2 and 3:"
+sed '2,3 s/is/was/g' sample.txt
+echo "----------------------"
+
+echo "10. Replace 'is' with 'was' on every odd-numbered line:"
+sed '1~2 s/is/was/g' sample.txt
+echo "----------------------"
