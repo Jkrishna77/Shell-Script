@@ -34,3 +34,27 @@ echo "----------------------"
 echo "5. Count how many times 'is' appears:"
 grep -c "is" sample.txt
 echo "----------------------"
+
+##########################################
+# Section 2: Advanced (Examples 6–10)
+##########################################
+
+echo "6. Show lines that do NOT match 'grep':"
+grep -v "grep" sample.txt
+echo "----------------------"
+
+echo "7. Match lines beginning with 'Hello':"
+grep "^Hello" sample.txt
+echo "----------------------"
+
+echo "8. Match lines ending with 'again':"
+grep "again$" sample.txt
+echo "----------------------"
+
+echo "9. Search using regex (match 'test' or 'Testing'):"
+grep -E "test|Testing" sample.txt
+echo "----------------------"
+
+echo "10. Highlight matches when searching 'is':"
+grep --color=always "is" sample.txt
+echo "----------------------"
