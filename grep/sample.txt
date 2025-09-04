@@ -1,0 +1,10 @@
+Hello World
+This is a test file
+I love DevOps
+Grep is powerful
+Grep can filter text
+Linux is amazing
+Practice makes perfect
+DevOps is the future
+Testing grep commands
+hello again
